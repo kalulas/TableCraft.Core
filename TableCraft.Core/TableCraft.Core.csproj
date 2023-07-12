@@ -3,11 +3,13 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Authors>edwardchen</Authors>
-    <Description>TableCraft is a general and extensible solution for parsing configuration source files, generating configuration description files and customizing configuration reading codes.</Description>
+    <Description>TableCraft.Core is a .NET class library that helps you describe configuration files and generate text(could be code) with your own rules.</Description>
     <RepositoryUrl>https://github.com/kalulas/TableCraft.Core</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Version>1.0.1</Version>
+    <PackageIcon>crafting-table-128.png</PackageIcon>
+    <PackageTags>code-generation</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,6 +22,7 @@
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
     <None Include="..\README.md" Pack="true" PackagePath="\" />
     <None Include="..\LICENSE" Pack="true" PackagePath="" />
+    <None Include="Assets\crafting-table-128.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
