@@ -1,6 +1,6 @@
 {
   "name": "tablecraft.core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TableCraft is a general and extensible solution for parsing configuration source files, generating configuration description files and customizing configuration reading codes.",
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0"
