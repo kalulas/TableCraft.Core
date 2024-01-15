@@ -17,12 +17,12 @@
 mono_crash.*
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
+TableCraft.Core/bin/[Dd]ebug/
+TableCraft.Core/bin/[Dd]ebugPublic/
+TableCraft.Core/bin/[Rr]elease/
+TableCraft.Core/bin/[Rr]eleases/
+# x64/
+# x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
@@ -75,7 +75,7 @@ StyleCopReport.xml
 *.obj
 *.iobj
 *.pch
-*.pdb
+# *.pdb
 *.ipdb
 *.pgc
 *.pgd
