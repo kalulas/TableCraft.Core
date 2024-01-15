@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+    <metadata>
+        <id>TableCraft.Core</id>
+        <version>1.0.3-preview-03</version>
+        <title>TableCraft.Core</title>
+        <authors>edwardchen</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <readme>docs\README.en.md</readme>
+        <license type="file">license\LICENSE.txt</license>
+        <icon>images\crafting-table-128.png</icon>
+        <description>TableCraft.Core is a .NET class library that helps you describe configuration files
+            and generate text(could be code) with your own rules.
+        </description>
+        <copyright>Copyright (C) 2023 edwardchen</copyright>
+        <repository url="https://github.com/kalulas/TableCraft.Core"/>
+        <dependencies>
+            <group targetFramework="net6.0">
+                <dependency id="LitJson" version="0.17.0" exclude="Build,Analyzers"/>
+                <dependency id="Mono.TextTemplating" version="2.3.1" exclude="Build,Analyzers"/>
+            </group>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="bin\Release\net6.0\p4api.net.dll" target="lib\net6.0\"/>
+        <file src="bin\Release\net6.0\p4api.net.pdb" target="lib\net6.0\"/>
+        <file src="bin\Release\net6.0\p4api.net.xml" target="lib\net6.0\"/>
+        <file src="bin\Release\net6.0\TableCraft.Core.dll" target="lib\net6.0\"/>
+        <file src="bin\Release\net6.0\TableCraft.Core.pdb" target="lib\net6.0\"/>
+        <file src="bin\Release\net6.0\TableCraft.Core.deps.json" target="lib\net6.0\"/>
+        <file src="bin\Release\net6.0\Library\Release\x86\p4bridge.dll" target="runtimes\win-x86\native\"/>
+        <file src="bin\Release\net6.0\Library\Release\x64\p4bridge.dll" target="runtimes\win-x64\native\"/>
+        <file src="Assets\crafting-table-128.png" target="images\"/>
+        <file src="..\LICENSE.txt" target="license\"/>
+        <file src="..\README.en.md" target="docs\"/>
+        <file src="..\README.md" target="docs\"/>
+        <file src="tablecraft.core.targets" target="build\"/>
+    </files>
+</package>
