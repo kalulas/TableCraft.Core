@@ -8,7 +8,7 @@
         <PackageReadmeFile>README.en.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <VersionPrefix>1.0.3</VersionPrefix>
-        <VersionSuffix>preview</VersionSuffix>
+        <VersionSuffix>preview-01</VersionSuffix>
         <PackageIcon>crafting-table-128.png</PackageIcon>
         <PackageTags>code-generation</PackageTags>
         <PackageReleaseNotes>
@@ -37,25 +37,27 @@
         <None Include="..\README.en.md" Pack="true" PackagePath=""/>
         <None Include="..\LICENSE" Pack="true" PackagePath=""/>
         <None Include="Assets\crafting-table-128.png" Pack="true" PackagePath=""/>
-    </ItemGroup>
-
-    <ItemGroup>
         <Reference Include="p4api.net">
             <HintPath>Library\p4api.net.dll</HintPath>
         </Reference>
     </ItemGroup>
 
-    <Target Name="CopyExtraFiles" AfterTargets="AfterBuild">
-        <Copy SourceFiles="Library\$(Configuration)\x64\p4bridge.dll" DestinationFolder="$(TargetDir)x64" ContinueOnError="true"/>
-        <Copy SourceFiles="Library\$(Configuration)\x86\p4bridge.dll" DestinationFolder="$(TargetDir)x86" ContinueOnError="true"/>
-        <Copy Condition="'$(Configuration)' == 'Debug'" SourceFiles="Library\Debug\x64\p4bridge.pdb" DestinationFolder="$(TargetDir)x64" ContinueOnError="true"/>
-        <Copy Condition="'$(Configuration)' == 'Debug'" SourceFiles="Library\Debug\x86\p4bridge.pdb" DestinationFolder="$(TargetDir)x86" ContinueOnError="true"/>
-    </Target>
-
-    <Target Name="PublishExtraFiles" AfterTargets="Publish">
-        <Copy SourceFiles="Library\$(Configuration)\x64\p4bridge.dll" DestinationFolder="$(TargetDir)x64" ContinueOnError="true"/>
-        <Copy SourceFiles="Library\$(Configuration)\x86\p4bridge.dll" DestinationFolder="$(TargetDir)x86" ContinueOnError="true"/>
-        <Copy Condition="'$(Configuration)' == 'Debug'" SourceFiles="Library\Debug\x64\p4bridge.pdb" DestinationFolder="$(TargetDir)x64" ContinueOnError="true"/>
-        <Copy Condition="'$(Configuration)' == 'Debug'" SourceFiles="Library\Debug\x86\p4bridge.pdb" DestinationFolder="$(TargetDir)x86" ContinueOnError="true"/>
-    </Target>
+    <ItemGroup>
+        <Content Include="Library\$(Configuration)\p4api.net.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PackagePath>lib\$(TargetFramework);</PackagePath>
+        </Content>
+        <Content Include="Library\$(Configuration)\p4api.net.pdb" Condition="'$(Configuration)'=='Debug'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PackagePath>lib\$(TargetFramework);</PackagePath>
+        </Content>
+        <Content Include="Library\$(Configuration)\x64\p4bridge.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PackagePath>runtimes\win-x64\native;</PackagePath>
+        </Content>
+        <Content Include="Library\$(Configuration)\x86\p4bridge.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PackagePath>runtimes\win-x86\native;</PackagePath>
+        </Content>
+    </ItemGroup>
 </Project>
